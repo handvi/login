@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import './LoginStyle.css'; 
 
 const LoginForm = () => {
   const [email, setEmail] = useState('');
@@ -28,30 +27,36 @@ const LoginForm = () => {
   };
 
   return (
-    <div className="login-container">
-      <div className="login-form-wrapper">
-        <h2 className="login-heading">Form Login</h2>
-        {error && <p className="login-error-message">{error}</p>}
+    <div className="d-flex justify-content-center align-items-center vh-100 bg-light">
+      <div className="card p-4 shadow-sm" style={{ width: '100%', maxWidth: '400px' }}>
+        <h2 className="text-center mb-4">Form Login</h2>
+        {error && <div className="alert alert-danger">{error}</div>}
         <form onSubmit={handleLogin}>
-          <div className="login-form-group">
-            <label className="login-label">Email:</label>
+          <div className="mb-3">
+            <label htmlFor="email" className="form-label">
+              Email:
+            </label>
             <input
               type="email"
+              id="email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
-              className="login-input"
+              className="form-control"
             />
           </div>
-          <div className="login-form-group">
-            <label className="login-label">Password:</label>
+          <div className="mb-3">
+            <label htmlFor="password" className="form-label">
+              Password:
+            </label>
             <input
               type="password"
+              id="password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
-              className="login-input"
+              className="form-control"
             />
           </div>
-          <button type="submit" className="login-button">
+          <button type="submit" className="btn btn-primary w-100">
             Login
           </button>
         </form>
