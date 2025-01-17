@@ -24,7 +24,6 @@ const LoginForm = () => {
       setError('Password harus memiliki minimal 8 karakter');
       setSuccessMessage('');
     } else {
-     
       setError('');
       setSuccessMessage(`Selamat, berhasil login dengan email: ${email}`);
       setEmail('');
